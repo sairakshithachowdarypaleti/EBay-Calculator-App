@@ -1,0 +1,126 @@
+{
+	"info": {
+		"_postman_id": "81d9aab4-2f75-4c6c-aceb-77780915f2ac",
+		"name": "Calculator Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45505805",
+		"_collection_link": "https://rakshitha-4004617.postman.co/workspace/Rakshitha's-Workspace~fa635bb0-e241-4033-8f62-17c63a548131/collection/45505805-81d9aab4-2f75-4c6c-aceb-77780915f2ac?action=share&source=collection_link&creator=45505805"
+	},
+	"item": [
+		{
+			"name": "getHistory",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/calc/history",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"calc",
+						"history"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "calculate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"operation\": \"MULTIPLY\",\r\n    \"numberOne\": 10,\r\n    \"numberTwo\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/calc",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"calc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "calculateChained",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"initialValue\": 5,\r\n    \"operationStepList\": [\r\n        {\"operation\": \"ADD\", \"value\": 3},\r\n        {\"operation\": \"SUBTRACT\", \"value\": 2}\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/calc/chain",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"calc",
+						"chain"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080/",
+			"type": "string"
+		}
+	]
+}
