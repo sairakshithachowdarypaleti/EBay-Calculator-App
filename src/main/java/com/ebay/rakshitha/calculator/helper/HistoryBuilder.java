@@ -2,6 +2,7 @@ package com.ebay.rakshitha.calculator.helper;
 
 import com.ebay.rakshitha.calculator.model.CalculatorHistory;
 import com.ebay.rakshitha.calculator.model.Operation;
+import com.ebay.rakshitha.calculator.util.TimeUtil;
 
 import java.time.LocalDateTime;
 
@@ -13,7 +14,7 @@ public class HistoryBuilder {
         history.setNumber2(b);
         history.setOperation(operation);
         history.setResult(result);
-        history.setTimeStamp(LocalDateTime.now());
+        history.setTimeStamp(TimeUtil.now());
         return history;
     }
 }
